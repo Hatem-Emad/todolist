@@ -32,8 +32,12 @@ const ToDoList = () => {
     }
   return (
     <div>
-        <ToDoForm addTodo={addTodo}/>       {/*passing addTodo as a prop*/}
-        <ToDo todos={todos} removeTodo={removeTodo} completeTodo={completeTodo} />
+        <h1 className='head'>To Do List</h1>
+        <div>
+            <ToDoForm addTodo={addTodo}/>       {/*passing addTodo as a prop*/}
+            <ToDo todos={todos} removeTodo={removeTodo} completeTodo={completeTodo} />
+        </div>
+        <footer>Created by <a href="#">Hatem_Emad</a></footer>
     </div>
   )
 }
