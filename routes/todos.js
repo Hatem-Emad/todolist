@@ -5,15 +5,15 @@ const User = require('../models/User')
 const Todo = require('../models/Todo')
 
 
-router.get('/', (req,res) => res.send('todos route'))
+// router.get('/', (req,res) => res.send('todos route'))
 
 //create a todo
-router.post('/:id', async (req,res) => {
+router.post('/', async (req,res) => {
     try {
 
         const newTodo = new Todo({
             text: req.body.text,
-            user: req.params.id
+            // user: req.params.id
         })
 
         await newTodo.save()
@@ -22,6 +22,15 @@ router.post('/:id', async (req,res) => {
     } catch (error) {
         console.error(error.message);
         res.status(500).send('Server Error')
+    }
+})
+//get all todos
+router.get('/', async (req,res) => {
+    try {
+        const todos = await Todo.find()
+        res.json({todos})
+    } catch (error) {
+        console.error(error.message).json('Server Error')
     }
 })
 
