@@ -52,7 +52,7 @@ const ToDoList = () => {
   return (
     <div>
         <h1 className='head'>To Do List</h1>
-        <button onClick={getTodos}>geet meeeeee</button>
+        <button className='getTodos-btn' onClick={getTodos}>geet meeeeee</button>
         <div>
             <ToDoForm addTodo={addTodo}/>       {/*passing addTodo as a prop*/}
             <ToDo todos={todos} getTodos={getTodos} removeTodo={removeTodo} completeTodo={completeTodo} />
